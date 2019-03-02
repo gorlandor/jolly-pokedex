@@ -2,7 +2,7 @@
   "name": "jolly-pokedex",
   "version": "0.0.1",
   "description": "A Pokedex implementation using Node, React and Redux based on the PokeAPI https://pokeapi.co",
-  "main": "server.js",
+  "main": "./server/server.js",
   "repository": "https://github.com/giovanni0918/jolly-pokedex.git",
   "author": "Giovanni Orlando <gorlandor@gmail.com>",
   "license": "Apache-2.0",
