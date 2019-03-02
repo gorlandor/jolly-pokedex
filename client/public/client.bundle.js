@@ -165,13 +165,202 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _BerryList_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./BerryList.jsx */ "./client/src/components/BerryList.jsx");
+
 
 
 function App() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, "Hello, world!");
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, "Jolly Pokedex"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BerryList_jsx__WEBPACK_IMPORTED_MODULE_1__["BerryListView"], null));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
+
+/***/ }),
+
+/***/ "./client/src/components/BerryList.jsx":
+/*!*********************************************!*\
+  !*** ./client/src/components/BerryList.jsx ***!
+  \*********************************************/
+/*! exports provided: BerryList, BerryListView */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BerryList", function() { return BerryList; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BerryListView", function() { return BerryListView; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _data_berries__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../data/berries */ "./client/src/data/berries.js");
+
+
+function BerryList(_ref) {
+  var berries = _ref.berries;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ol", null, berries.map(function (berry, i) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      key: i
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      href: berry.url
+    }, berry.name));
+  }));
+}
+function BerryListView(props) {
+  var berries = _data_berries__WEBPACK_IMPORTED_MODULE_1__["berries1"].results.concat(_data_berries__WEBPACK_IMPORTED_MODULE_1__["berries2"].results);
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    style: {
+      color: "royalblue",
+      fontSize: "1.25em",
+      fontFamily: "Arial, Helvetica, sans-serif"
+    }
+  }, "Berries"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(BerryList, {
+    berries: berries
+  }));
+}
+
+/***/ }),
+
+/***/ "./client/src/data/berries.js":
+/*!************************************!*\
+  !*** ./client/src/data/berries.js ***!
+  \************************************/
+/*! exports provided: berries1, berries2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "berries1", function() { return berries1; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "berries2", function() { return berries2; });
+var berries1 = {
+  count: 64,
+  next: 'https://pokeapi.co/api/v2/berry/?offset=20&limit=20',
+  previous: null,
+  results: [{
+    name: 'cheri',
+    url: 'https://pokeapi.co/api/v2/berry/1/'
+  }, {
+    name: 'chesto',
+    url: 'https://pokeapi.co/api/v2/berry/2/'
+  }, {
+    name: 'pecha',
+    url: 'https://pokeapi.co/api/v2/berry/3/'
+  }, {
+    name: 'rawst',
+    url: 'https://pokeapi.co/api/v2/berry/4/'
+  }, {
+    name: 'aspear',
+    url: 'https://pokeapi.co/api/v2/berry/5/'
+  }, {
+    name: 'leppa',
+    url: 'https://pokeapi.co/api/v2/berry/6/'
+  }, {
+    name: 'oran',
+    url: 'https://pokeapi.co/api/v2/berry/7/'
+  }, {
+    name: 'persim',
+    url: 'https://pokeapi.co/api/v2/berry/8/'
+  }, {
+    name: 'lum',
+    url: 'https://pokeapi.co/api/v2/berry/9/'
+  }, {
+    name: 'sitrus',
+    url: 'https://pokeapi.co/api/v2/berry/10/'
+  }, {
+    name: 'figy',
+    url: 'https://pokeapi.co/api/v2/berry/11/'
+  }, {
+    name: 'wiki',
+    url: 'https://pokeapi.co/api/v2/berry/12/'
+  }, {
+    name: 'mago',
+    url: 'https://pokeapi.co/api/v2/berry/13/'
+  }, {
+    name: 'aguav',
+    url: 'https://pokeapi.co/api/v2/berry/14/'
+  }, {
+    name: 'iapapa',
+    url: 'https://pokeapi.co/api/v2/berry/15/'
+  }, {
+    name: 'razz',
+    url: 'https://pokeapi.co/api/v2/berry/16/'
+  }, {
+    name: 'bluk',
+    url: 'https://pokeapi.co/api/v2/berry/17/'
+  }, {
+    name: 'nanab',
+    url: 'https://pokeapi.co/api/v2/berry/18/'
+  }, {
+    name: 'wepear',
+    url: 'https://pokeapi.co/api/v2/berry/19/'
+  }, {
+    name: 'pinap',
+    url: 'https://pokeapi.co/api/v2/berry/20/'
+  }]
+};
+var berries2 = {
+  count: 64,
+  next: 'https://pokeapi.co/api/v2/berry/?offset=40&limit=20',
+  previous: 'https://pokeapi.co/api/v2/berry/?offset=0&limit=20',
+  results: [{
+    name: 'pomeg',
+    url: 'https://pokeapi.co/api/v2/berry/21/'
+  }, {
+    name: 'kelpsy',
+    url: 'https://pokeapi.co/api/v2/berry/22/'
+  }, {
+    name: 'qualot',
+    url: 'https://pokeapi.co/api/v2/berry/23/'
+  }, {
+    name: 'hondew',
+    url: 'https://pokeapi.co/api/v2/berry/24/'
+  }, {
+    name: 'grepa',
+    url: 'https://pokeapi.co/api/v2/berry/25/'
+  }, {
+    name: 'tamato',
+    url: 'https://pokeapi.co/api/v2/berry/26/'
+  }, {
+    name: 'cornn',
+    url: 'https://pokeapi.co/api/v2/berry/27/'
+  }, {
+    name: 'magost',
+    url: 'https://pokeapi.co/api/v2/berry/28/'
+  }, {
+    name: 'rabuta',
+    url: 'https://pokeapi.co/api/v2/berry/29/'
+  }, {
+    name: 'nomel',
+    url: 'https://pokeapi.co/api/v2/berry/30/'
+  }, {
+    name: 'spelon',
+    url: 'https://pokeapi.co/api/v2/berry/31/'
+  }, {
+    name: 'pamtre',
+    url: 'https://pokeapi.co/api/v2/berry/32/'
+  }, {
+    name: 'watmel',
+    url: 'https://pokeapi.co/api/v2/berry/33/'
+  }, {
+    name: 'durin',
+    url: 'https://pokeapi.co/api/v2/berry/34/'
+  }, {
+    name: 'belue',
+    url: 'https://pokeapi.co/api/v2/berry/35/'
+  }, {
+    name: 'occa',
+    url: 'https://pokeapi.co/api/v2/berry/36/'
+  }, {
+    name: 'passho',
+    url: 'https://pokeapi.co/api/v2/berry/37/'
+  }, {
+    name: 'wacan',
+    url: 'https://pokeapi.co/api/v2/berry/38/'
+  }, {
+    name: 'rindo',
+    url: 'https://pokeapi.co/api/v2/berry/39/'
+  }, {
+    name: 'yache',
+    url: 'https://pokeapi.co/api/v2/berry/40/'
+  }]
+};
 
 /***/ }),
 
