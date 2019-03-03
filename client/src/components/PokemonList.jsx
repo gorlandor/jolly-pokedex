@@ -1,11 +1,11 @@
 import React from 'react';
-import { berries1, berries2 } from '../data/berries';
 import { primaryColor, secondaryColor } from '../data/constants';
+import { pokemon1, pokemon2 } from '../data/pokemon';
 
-export function BerryLink({ berryName, berryLink, imageSource, imageAltText }) {
+export function PokemonLink({ pokemonName, pokemonLink, imageSource, imageAltText }) {
     return (
         <a
-            href={berryLink}
+            href={pokemonLink}
             style={{
                 display: 'flex',
                 justifyContent: 'flex-start',
@@ -15,25 +15,25 @@ export function BerryLink({ berryName, berryLink, imageSource, imageAltText }) {
             }}
         >
             <img src={imageSource} alt={imageAltText} style={{ height: '64px' }} />
-            {berryName}
+            {pokemonName}
         </a>
     );
 }
 
-export function BerryList({ berries }) {
-    const berrySprite = id => `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/${id}.png`;
+export function PokemonList({ pokemon: pokemonList }) {
+    const pokemonSprite = id => `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/${id}.png`;
+    const pokemonIdRegex = new RegExp(/(pokemon\/[0-9]+)/);
     return (
         <ol>
-            {berries.map(function(berry, i) {
-                const berryName = berry.name.concat(' berry');
-                const id = `items/${berry.name}-berry`;
+            {pokemonList.map(function(pokemon, i) {
+                const id = pokemonIdRegex.exec(pokemon.url)[0];
                 return (
                     <li key={i} style={{ borderBottom: `1px solid ${secondaryColor}` }}>
-                        <BerryLink
-                            berryLink={berry.url}
-                            berryName={berryName}
-                            imageSource={berrySprite(id)}
-                            imageAltText={berryName.concat(' image')}
+                        <PokemonLink
+                            pokemonLink={pokemon.url}
+                            pokemonName={pokemon.name}
+                            imageAltText={pokemon.name.concat(' sprite')}
+                            imageSource={pokemonSprite(id)}
                         />
                     </li>
                 );
@@ -41,11 +41,11 @@ export function BerryList({ berries }) {
         </ol>
     );
 }
-export function BerryListView(props) {
-    const berries = berries1.results.concat(berries2.results);
+export function PokemonListView(props) {
+    const pokemonList = pokemon1.results.concat(pokemon2.results);
     return (
         <React.Fragment>
-            <section id={'berries'}>
+            <section id={'pokemon'}>
                 <h2
                     style={{
                         color: primaryColor,
@@ -60,10 +60,10 @@ export function BerryListView(props) {
                         alignItems: 'center',
                     }}
                 >
-                    Berries
+                    Pokemon
                 </h2>
-                <BerryList berries={berries} />
             </section>
+            <PokemonList pokemon={pokemonList} />
         </React.Fragment>
     );
 }
