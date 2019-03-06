@@ -1,14 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export function Tabs() {
     return (
-        <nav>
+        <nav style={{ display: 'flex', justifyContent: 'center', alignItems: 'space-around' }}>
             <ul>
                 <li>
-                    <a href="#berries">Berries</a>
+                    <Link to={'/'}>Pokemon</Link>
                 </li>
                 <li>
-                    <a href="#pokemon">Pokemon</a>
+                    <Link to={'/berries'}>Berries</Link>
                 </li>
             </ul>
         </nav>

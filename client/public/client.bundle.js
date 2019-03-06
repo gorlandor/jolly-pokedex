@@ -165,16 +165,27 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _BerryList_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./BerryList.jsx */ "./client/src/components/BerryList.jsx");
-/* harmony import */ var _PokemonList_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./PokemonList.jsx */ "./client/src/components/PokemonList.jsx");
-/* harmony import */ var _Tabs_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Tabs.jsx */ "./client/src/components/Tabs.jsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+/* harmony import */ var _BerryList_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./BerryList.jsx */ "./client/src/components/BerryList.jsx");
+/* harmony import */ var _PokemonList_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./PokemonList.jsx */ "./client/src/components/PokemonList.jsx");
+/* harmony import */ var _Tabs_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Tabs.jsx */ "./client/src/components/Tabs.jsx");
+
 
 
 
 
 
 function App() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, "Jolly Pokedex"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Tabs_jsx__WEBPACK_IMPORTED_MODULE_3__["Tabs"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("main", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BerryList_jsx__WEBPACK_IMPORTED_MODULE_1__["BerryListView"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_PokemonList_jsx__WEBPACK_IMPORTED_MODULE_2__["PokemonListView"], null)));
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, "Jolly Pokedex"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Tabs_jsx__WEBPACK_IMPORTED_MODULE_4__["Tabs"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("main", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "/",
+    exact: true,
+    component: _PokemonList_jsx__WEBPACK_IMPORTED_MODULE_3__["PokemonListView"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "/berries/",
+    component: _BerryList_jsx__WEBPACK_IMPORTED_MODULE_2__["BerryListView"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    component: _PokemonList_jsx__WEBPACK_IMPORTED_MODULE_3__["PokemonListView"]
+  })));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
@@ -369,13 +380,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Tabs", function() { return Tabs; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+
 
 function Tabs() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "#berries"
-  }, "Berries")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "#pokemon"
-  }, "Pokemon"))));
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+    style: {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'space-around'
+    }
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: '/'
+  }, "Pokemon")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: '/berries'
+  }, "Berries"))));
 }
 
 /***/ }),
@@ -703,11 +722,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_App_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/App.jsx */ "./client/src/components/App.jsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+/* harmony import */ var _components_App_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/App.jsx */ "./client/src/components/App.jsx");
 
 
 
-react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_App_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], null)), document.getElementById('jolly-pokedex'));
+
+react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["BrowserRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_App_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], null))), document.getElementById('jolly-pokedex'));
 
 /***/ })
 
