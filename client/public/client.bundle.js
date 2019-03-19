@@ -176,7 +176,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function App() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, "Jolly Pokedex"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Tabs_jsx__WEBPACK_IMPORTED_MODULE_4__["Tabs"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("main", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, "Jolly Pokedex"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Tabs_jsx__WEBPACK_IMPORTED_MODULE_4__["Tabs"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("main", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/",
     exact: true,
     component: _PokemonList_jsx__WEBPACK_IMPORTED_MODULE_3__["PokemonListView"]
@@ -185,7 +185,7 @@ function App() {
     component: _BerryList_jsx__WEBPACK_IMPORTED_MODULE_2__["BerryListView"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     component: _PokemonList_jsx__WEBPACK_IMPORTED_MODULE_3__["PokemonListView"]
-  })));
+  }))));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
