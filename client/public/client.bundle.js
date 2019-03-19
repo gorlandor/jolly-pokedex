@@ -204,10 +204,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BerryLink", function() { return BerryLink; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BerryList", function() { return BerryList; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BerryListView", function() { return BerryListView; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _data_berries__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../data/berries */ "./client/src/data/berries.js");
-/* harmony import */ var _data_constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../data/constants */ "./client/src/data/constants.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/asyncToGenerator.js");
+/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ "./node_modules/@babel/runtime/helpers/slicedToArray.js");
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _data_berries__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../data/berries */ "./client/src/data/berries.js");
+/* harmony import */ var _data_constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../data/constants */ "./client/src/data/constants.js");
+
+
+
 
 
 
@@ -216,7 +225,7 @@ function BerryLink(_ref) {
       berryLink = _ref.berryLink,
       imageSource = _ref.imageSource,
       imageAltText = _ref.imageAltText;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+  return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("a", {
     href: berryLink,
     style: {
       display: 'flex',
@@ -225,7 +234,7 @@ function BerryLink(_ref) {
       height: '64px',
       textTransform: 'capitalize'
     }
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("img", {
     src: imageSource,
     alt: imageAltText,
     style: {
@@ -240,15 +249,15 @@ function BerryList(_ref2) {
     return "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/".concat(id, ".png");
   };
 
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ol", null, berries.map(function (berry, i) {
+  return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("ol", null, berries.map(function (berry, i) {
     var berryName = berry.name.concat(' berry');
     var id = "items/".concat(berry.name, "-berry");
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("li", {
       key: i,
       style: {
-        borderBottom: "1px solid ".concat(_data_constants__WEBPACK_IMPORTED_MODULE_2__["secondaryColor"])
+        borderBottom: "1px solid ".concat(_data_constants__WEBPACK_IMPORTED_MODULE_5__["secondaryColor"])
       }
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(BerryLink, {
+    }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(BerryLink, {
       berryLink: berry.url,
       berryName: berryName,
       imageSource: berrySprite(id),
@@ -256,16 +265,66 @@ function BerryList(_ref2) {
     }));
   }));
 }
+
+function useBerries() {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])([]),
+      _useState2 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_2___default()(_useState, 2),
+      berries = _useState2[0],
+      setBerries = _useState2[1];
+
+  function fetchBerries() {
+    return _fetchBerries.apply(this, arguments);
+  }
+
+  function _fetchBerries() {
+    _fetchBerries = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()(
+    /*#__PURE__*/
+    _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+      var _ref3, berries;
+
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return Object(_data_berries__WEBPACK_IMPORTED_MODULE_4__["getBerries"])();
+
+            case 2:
+              _ref3 = _context.sent;
+              berries = _ref3.results;
+              setBerries(berries);
+
+            case 5:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }));
+    return _fetchBerries.apply(this, arguments);
+  }
+
+  Object(react__WEBPACK_IMPORTED_MODULE_3__["useEffect"])(function () {
+    fetchBerries();
+  }, []);
+  return {
+    berries: berries,
+    fetchBerries: fetchBerries
+  };
+}
+
 function BerryListView(props) {
-  var berries = _data_berries__WEBPACK_IMPORTED_MODULE_1__["berries1"].results.concat(_data_berries__WEBPACK_IMPORTED_MODULE_1__["berries2"].results);
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+  var _useBerries = useBerries(),
+      berries = _useBerries.berries;
+
+  return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_3___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("section", {
     id: 'berries'
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("h2", {
     style: {
-      color: _data_constants__WEBPACK_IMPORTED_MODULE_2__["primaryColor"],
+      color: _data_constants__WEBPACK_IMPORTED_MODULE_5__["primaryColor"],
       fontSize: '1.375em',
       fontFamily: 'Arial, Helvetica, sans-serif',
-      borderLeft: "5px solid ".concat(_data_constants__WEBPACK_IMPORTED_MODULE_2__["primaryColor"]),
+      borderLeft: "5px solid ".concat(_data_constants__WEBPACK_IMPORTED_MODULE_5__["primaryColor"]),
       paddingLeft: '1em',
       margin: '0 0 0 8px',
       height: '2em',
@@ -273,7 +332,7 @@ function BerryListView(props) {
       justifyContent: 'flex-start',
       alignItems: 'center'
     }
-  }, "Berries"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(BerryList, {
+  }, "Berries"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(BerryList, {
     berries: berries
   })));
 }
@@ -403,13 +462,111 @@ function Tabs() {
 /*!************************************!*\
   !*** ./client/src/data/berries.js ***!
   \************************************/
-/*! exports provided: berries1, berries2 */
+/*! exports provided: getBerries, berries1, berries2 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getBerries", function() { return getBerries; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "berries1", function() { return berries1; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "berries2", function() { return berries2; });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/asyncToGenerator.js");
+/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+function getBerries() {
+  return _getBerries.apply(this, arguments);
+}
+
+function _getBerries() {
+  _getBerries = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()(
+  /*#__PURE__*/
+  _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+    var offset,
+        limit,
+        url,
+        _args2 = arguments;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            offset = _args2.length > 0 && _args2[0] !== undefined ? _args2[0] : 0;
+            limit = _args2.length > 1 && _args2[1] !== undefined ? _args2[1] : 50;
+            url = "https://pokeapi.co/api/v2/berry?offset=".concat(offset, "&limit=").concat(limit);
+            return _context2.abrupt("return", new Promise(
+            /*#__PURE__*/
+            function () {
+              var _ref = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()(
+              /*#__PURE__*/
+              _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(resolve, reject) {
+                var response;
+                return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+                  while (1) {
+                    switch (_context.prev = _context.next) {
+                      case 0:
+                        _context.prev = 0;
+                        _context.next = 3;
+                        return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get(url, {
+                          headers: new Headers({
+                            Accept: 'application/json; charset=utf-8'
+                          })
+                        });
+
+                      case 3:
+                        response = _context.sent;
+
+                        if (!(response.status === 200)) {
+                          _context.next = 8;
+                          break;
+                        }
+
+                        return _context.abrupt("return", resolve(response.data));
+
+                      case 8:
+                        return _context.abrupt("return", reject({
+                          error: new Error(response.statusText),
+                          response: response,
+                          status: response.status
+                        }));
+
+                      case 9:
+                        _context.next = 15;
+                        break;
+
+                      case 11:
+                        _context.prev = 11;
+                        _context.t0 = _context["catch"](0);
+                        console.warn(_context.t0);
+                        return _context.abrupt("return", reject(_context.t0));
+
+                      case 15:
+                      case "end":
+                        return _context.stop();
+                    }
+                  }
+                }, _callee, null, [[0, 11]]);
+              }));
+
+              return function (_x, _x2) {
+                return _ref.apply(this, arguments);
+              };
+            }()));
+
+          case 4:
+          case "end":
+            return _context2.stop();
+        }
+      }
+    }, _callee2);
+  }));
+  return _getBerries.apply(this, arguments);
+}
+
 var berries1 = {
   count: 64,
   next: 'https://pokeapi.co/api/v2/berry/?offset=20&limit=20',

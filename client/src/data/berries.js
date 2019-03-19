@@ -1,3 +1,32 @@
+import Axios from 'axios';
+
+export async function getBerries(offset = 0, limit = 50) {
+    const url = `https://pokeapi.co/api/v2/berry?offset=${offset}&limit=${limit}`;
+
+    return new Promise(async function(resolve, reject) {
+        try {
+            const response = await Axios.get(url, {
+                headers: new Headers({
+                    Accept: 'application/json; charset=utf-8',
+                }),
+            });
+
+            if (response.status === 200) {
+                return resolve(response.data);
+            } else {
+                return reject({
+                    error: new Error(response.statusText),
+                    response: response,
+                    status: response.status,
+                });
+            }
+        } catch (error) {
+            console.warn(error);
+            return reject(error);
+        }
+    });
+}
+
 export const berries1 = {
     count: 64,
     next: 'https://pokeapi.co/api/v2/berry/?offset=20&limit=20',

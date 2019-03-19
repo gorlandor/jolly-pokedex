@@ -1,5 +1,5 @@
-import React from 'react';
-import { berries1, berries2 } from '../data/berries';
+import React, { useEffect, useState } from 'react';
+import { getBerries } from '../data/berries';
 import { primaryColor, secondaryColor } from '../data/constants';
 
 export function BerryLink({ berryName, berryLink, imageSource, imageAltText }) {
@@ -41,8 +41,26 @@ export function BerryList({ berries }) {
         </ol>
     );
 }
-export function BerryListView(props) {
-    const berries = berries1.results.concat(berries2.results);
+
+function useBerries() {
+    const [berries, setBerries] = useState([]);
+    
+    async function fetchBerries() {
+        const { results: berries } = await getBerries();
+        setBerries(berries);
+    }
+
+    useEffect(() => {
+        
+        fetchBerries();
+
+    }, [])
+
+    return { berries, fetchBerries };
+}
+
+export function BerryListView(props) {    
+    const { berries } = useBerries();    
     return (
         <React.Fragment>
             <section id={'berries'}>

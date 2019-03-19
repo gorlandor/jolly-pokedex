@@ -12,12 +12,12 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.3.4",
+    "axios": "^0.18.0",
     "express": "^4.16.4",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-router": "^4.3.1",
-    "react-router-dom": "^4.3.1",
-    "unfetch": "^4.1.0"
+    "react-router-dom": "^4.3.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
