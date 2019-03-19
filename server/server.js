@@ -49,13 +49,13 @@ function htmlTemplate(reactDom) {
                 <title>Jolly Pokedex</title>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 
-                <link rel="stylesheet" href="./static/styles.bundle.css">
-                <script src="./static/vendors.bundle.js"></script>
+                <link rel="stylesheet" href="./static/bundles/styles.bundle.css">
+                <script src="./static/bundles/vendors.bundle.js"></script>
             </head>
 
             <body>
                 <div id="jolly-pokedex">${reactDom}</div>
-                <script src="./static/client.bundle.js"></script>
+                <script src="./static/bundles/client.bundle.js"></script>
             </body>
         </html>
     `;

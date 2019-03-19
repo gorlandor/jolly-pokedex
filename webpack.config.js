@@ -8,7 +8,7 @@ module.exports = {
         'client.bundle': './client/src/index.jsx',
     },
     output: {
-        path: path.resolve(__dirname, 'client/public'),
+        path: path.resolve(__dirname, 'client/public/bundles'),
         filename: '[name].js',
     },
     devtool: 'source-map',
