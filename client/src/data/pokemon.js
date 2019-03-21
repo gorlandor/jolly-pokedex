@@ -1,3 +1,7 @@
+import Axios from 'axios';
+
+// todo: call PokeAPI to get list of Pokemon using Axios http get
+
 export const pokemon1 = {
     count: 964,
     next: 'https://pokeapi.co/api/v2/pokemon/?offset=20&limit=20',
