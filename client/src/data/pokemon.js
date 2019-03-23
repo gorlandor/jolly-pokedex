@@ -1,6 +1,31 @@
 import Axios from 'axios';
 
-// todo: call PokeAPI to get list of Pokemon using Axios http get
+export async function getPokemon(offset = 0, limit = 50) {
+    const url = `https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=${limit}`;
+
+    return new Promise(async function(resolve, reject) {
+        try {
+            const response = await Axios.get(url, {
+                headers: new Headers({
+                    Accept: 'application/json; charset=utf-8',
+                }),
+            });
+
+            if (response.status === 200) {
+                return resolve(response.data);
+            } else {
+                return reject({
+                    error: new Error(response.statusText),
+                    response: response,
+                    status: response.status,
+                });
+            }
+        } catch (error) {
+            console.warn(error);
+            return reject(error);
+        }
+    });
+}
 
 export const pokemon1 = {
     count: 964,

@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { primaryColor, secondaryColor } from '../data/constants';
-import { pokemon1, pokemon2 } from '../data/pokemon';
+import { getPokemon } from '../data/pokemon';
 
 export function PokemonLink({ pokemonName, pokemonLink, imageSource, imageAltText }) {
     return (
@@ -41,8 +41,26 @@ export function PokemonList({ pokemon: pokemonList }) {
         </ol>
     );
 }
+
+function usePokemon() {
+    const [pokemon, setPokemon] = useState([]);
+
+    async function fetchPokemon() {
+        const { results: pokemon } = await getPokemon();
+        setPokemon(pokemon);
+    }
+
+    useEffect(() => {
+
+        fetchPokemon();
+
+    }, []);
+
+    return { pokemon, fetchPokemon };
+}
+
 export function PokemonListView(props) {
-    const pokemonList = pokemon1.results.concat(pokemon2.results);
+    const { pokemon: pokemonList} = usePokemon();
     return (
         <React.Fragment>
             <section id={'pokemon'}>
