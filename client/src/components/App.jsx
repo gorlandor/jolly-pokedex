@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { BerryListView } from './BerryList.jsx';
-import { PokemonListView } from './PokemonList.jsx';
+import { BerryListView } from './BerryListView.jsx';
+import { PokemonListView } from './PokemonListView.jsx';
 import { Tabs } from './Tabs.jsx';
 
 function App() {

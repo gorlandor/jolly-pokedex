@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export function Tabs() {
     return (
-        <nav style={{ display: 'flex', justifyContent: 'center', alignItems: 'space-around' }}>
+        <nav style={{ display: 'flex', justifyContent: 'center' }}>
             <ul>
                 <li>
                     <Link to={'/'}>Pokemon</Link>
