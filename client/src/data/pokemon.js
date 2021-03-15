@@ -6,9 +6,9 @@ export async function getPokemon(offset = 0, limit = 50) {
     return new Promise(async function(resolve, reject) {
         try {
             const response = await Axios.get(url, {
-                headers: new Headers({
-                    Accept: 'application/json; charset=utf-8',
-                }),
+                headers: {
+                    Accept: "application/json; charset=utf-8"
+                }
             });
 
             if (response.status === 200) {
